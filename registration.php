@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web">
-    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
     <link rel="stylesheet" href="assets/css/Header-Blue.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
     <link rel="stylesheet" href="assets/css/Lightbox-Gallery.css">
@@ -23,7 +23,7 @@
     <div class="register-photo" style="height: 100%;height: 100vh;display: grid;">
         <div class="form-container">
             <div class="image-holder"></div>
-            <form id="login_form" method="post" name="form1">
+            <form id="register_form" method="post" name="form1">
                 <h2 class="text-center"><strong>Create</strong> an account.</h2>
                 <div class="form-group">
                     <div id="errormsg" class="msgerror" style="display:none;"><label style="margin-bottom: 0px;">Label</label></div>
@@ -36,7 +36,7 @@
                 <div class="form-group">
                     <div class="form-check"><label class="form-check-label"><input class="form-check-input" type="checkbox">I agree to the license terms.</label></div>
                 </div>
-                <div class="form-group"><button class="btn btn-primary btn-block btn-lg" id="signup" type="submit" name="signup">Sign Up</button></div><a class="already" href="#">You already have an account? Login here.</a></form>
+                <div class="form-group"><button class="btn btn-primary btn-block btn-lg" id="signup" type="submit" name="signup">Sign Up</button></div><a class="already" href="login.php">You already have an account? Login here.</a></form>
         </div>
     </div>
     <script src="assets/js/jquery.min.js"></script>

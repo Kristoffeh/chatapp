@@ -236,3 +236,23 @@
   border-radius: 5px;
 }
 
+.loggut {
+  padding: 2px 5px 3px 5px;
+  background-color: #EF5350;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.loggut:hover {
+  color: #ffffff;
+  text-decoration: none;
+  background-color: #E57373;
+}
+
+.loggedout {
+  padding: 14px 15px 14px 15px;
+  background-color: #66BB6A;
+  color: #fff;
+  border-radius: 5px;
+}
+

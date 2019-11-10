@@ -8,7 +8,7 @@ $(document).ready(function(){
 
         if(name != ""){
             $.ajax({
-                url: "../../save.php",
+                url: "../../require/save.php",
                 type: "POST",
                 data: {
                     type: 1,
@@ -21,7 +21,7 @@ $(document).ready(function(){
                 success: function(dataResult){
                     var dataResult = JSON.parse(dataResult);
                     if(dataResult.statusCode==200){
-                        $('#login_form').find('input:text').val('');
+                        $('#register_form').find('input:text').val('');
 
                         $("#errormsg").hide();
                         $("#successmsg").show();
@@ -29,6 +29,41 @@ $(document).ready(function(){
                     }
                     else if(dataResult.statusCode==201){
                     	$("#signup").removeAttr("disabled");
+
+                        $("#successmsg").hide();
+                        $("#errormsg").show();
+                        $('#errormsg').html('An error occured. Try again.');
+                    }
+                }
+            });
+        }
+        else{
+            alert('Please fill all the fields!');
+        }
+    });
+    
+    $('#login').on('click', function(){
+        $("#login").attr("disabled", "disabled");
+        var email = $("#email").val();
+        var password = $("#password").val();
+
+        if(email != ""){
+            $.ajax({
+                url: "../../require/save.php",
+                type: "POST",
+                data: {
+                    type: 2,
+                    email: email,
+                    password: password,
+                },
+                cache: false,
+                success: function(dataResult){
+                    var dataResult = JSON.parse(dataResult);
+                    if(dataResult.statusCode==200){
+                        location.href = "../../index.php";
+                    }
+                    else if(dataResult.statusCode==201){
+                    	$("#login").removeAttr("disabled");
 
                         $("#successmsg").hide();
                         $("#errormsg").show();
