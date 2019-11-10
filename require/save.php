@@ -48,8 +48,9 @@
         }
         if (!$res){
 	    	printf("Error: %s\n", mysqli_error($conn));
-	    exit();
-}
+	    	exit();
+		}
+
 		/*if (mysqli_num_rows($check)>0)
 		{
 			$_SESSION['email'] = $email;
@@ -58,6 +59,23 @@
 		else{
 			echo json_encode(array("statusCode"=>201));
 		}*/
+
+		mysqli_close($conn);
+	}
+
+	if($_POST['type']==5){
+		$msg = $_POST['msg'];
+		$user = $_POST['user'];
+
+		$sql = "INSERT INTO `messages`(`sentby`,`message`,`date`) 
+		VALUES ('$user','$msg','$date')";
+
+		if (mysqli_query($conn, $sql)){
+			echo json_encode(array("statusCode"=>200));
+		}
+		else {
+			echo json_encode(array("statusCode"=>201));
+		}
 		mysqli_close($conn);
 	}
 ?>

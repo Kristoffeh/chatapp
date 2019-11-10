@@ -62,37 +62,16 @@ $userRow=mysqli_fetch_array($r);
                             </div>
                         </form>
                     </div>
-                    <div class="d-flex d-xl-flex flex-column flex-fill align-items-xl-start middle-middle-div scrollable" id="scrolldiv" style="padding: 20px;padding-left: 30px;">
-                        <form style="margin-right: 11px;">
-                            <div class="form-group" style="align-items: center;"><img class="rounded-circle" src="assets/img/https___s3.amazonaws.com_appforest_uf_f1572480905302x636683182525524100_image.jpg" width="30" height="30" style="margin-right: 10px;"><label style="margin-right: 10px;font-family: 'Titillium Web', sans-serif;font-size: 19px;margin-bottom: 1px;">Kristoffer</label>
-                                <label
-                                    style="font-family: 'Titillium Web', sans-serif;font-size: 15px;color: rgb(142,142,142);margin-bottom: 0px;">21. August 2019 21:05</label><label class="shadow-sm d-flex float-right d-xl-flex userrole tag-developer" style="font-family: 'Titillium Web', sans-serif;font-size: 15px;color: rgb(255,255,255);margin-bottom: 0px;">Utvikler</label>
-                                    <p
-                                        style="font-family: 'Titillium Web', sans-serif;font-size: 17px;margin-top: 10px;margin-left: 40px;">Hej hej<br></p>
-                            </div>
-                            <div class="form-group" style="align-items: center;">
-                                <hr><img class="rounded-circle" src="assets/img/blue%20to%20pink.jpg" width="30" height="30" style="margin-right: 10px;"><label style="margin-right: 10px;font-family: 'Titillium Web', sans-serif;font-size: 19px;margin-bottom: 1px;">Ole</label>
-                                <label
-                                    style="font-family: 'Titillium Web', sans-serif;font-size: 15px;color: rgb(142,142,142);margin-bottom: 0px;">21. August 2019 21:05</label><label class="shadow-sm d-flex float-right d-xl-flex userrole tag-admin" style="font-family: 'Titillium Web', sans-serif;font-size: 15px;color: rgb(255,255,255);margin-left: 5px;margin-bottom: 0px;">Admin</label>
-                                    <p
-                                        style="font-family: 'Titillium Web', sans-serif;font-size: 17px;margin-top: 10px;margin-left: 40px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-                                        est laborum.<br></p>
-                            </div>
-                            <div class="form-group" style="align-items: center;">
-                                <hr><img class="rounded-circle" src="assets/img/captured%20(1).gif" width="30" height="30" style="margin-right: 10px;"><label style="margin-right: 10px;font-family: 'Titillium Web', sans-serif;font-size: 19px;margin-bottom: 1px;">Fredrik</label>
-                                <label
-                                    style="font-family: 'Titillium Web', sans-serif;font-size: 15px;color: rgb(142,142,142);margin-bottom: 0px;">21. August 2019 21:05</label>
-                                    <p style="font-family: 'Titillium Web', sans-serif;font-size: 17px;margin-top: 10px;margin-left: 40px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-                                        est laborum.<br></p>
-                            </div>
-                        </form>
+                    <div class="d-flex d-xl-flex flex-column flex-fill align-items-xl-start middle-middle-div scrollable interval" id="scrolldiv" style="padding: 20px;padding-left: 30px;padding-top: 20px;margin-bottom: 0px;">
+                        <div id="interval" style="width: 100%;"></div>
                     </div>
                     <div>
                         <div class="middle-top-div" style="/*position: absolute;*//*bottom: 0;*//*width: 100%;*/padding: 15px;">
-                            <form>
-                                <div class="form-group" style="margin-bottom: 0px;"><textarea class="form-control textarea-replace messagebox textarea-autosize" id="msg" placeholder="Skriv noe.." rows="1" maxlength="1500"></textarea><label id="lblcount" style="margin-bottom: 0px;font-size: 13px;color: rgb(133,133,133);margin-left: 12px;">0 / 1500</label></div>
+                            <form id="messageform" method="post" name="form1">
+                                <div class="form-group" style="margin-bottom: 0px;"><input type="hidden" class="form-control" id="user" value="<?php echo $userRow['name']; ?>" /><input class="form-control" type="hidden" id="user"><textarea class="form-control textarea-replace messagebox textarea-autosize" id="msg" placeholder="Skriv noe.." rows="1" maxlength="1500"></textarea>
+                                    <label
+                                        id="lblcount" style="margin-bottom: 0px;font-size: 13px;color: rgb(133,133,133);margin-left: 12px;">0 / 1500</label>
+                                </div>
                             </form>
                         </div>
                     </div>
@@ -126,6 +105,7 @@ $userRow=mysqli_fetch_array($r);
     <script src="assets/js/login.js"></script>
     <script src="assets/js/Select-Search.js"></script>
     <script src="assets/js/Studious-selectbox.js"></script>
+    <script src="assets/js/update.js"></script>
 </body>
 
 </html>

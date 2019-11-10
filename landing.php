@@ -30,6 +30,7 @@
     <script src="assets/js/login.js"></script>
     <script src="assets/js/Select-Search.js"></script>
     <script src="assets/js/Studious-selectbox.js"></script>
+    <script src="assets/js/update.js"></script>
 </body>
 
 </html>

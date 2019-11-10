@@ -20,23 +20,18 @@
 </head>
 
 <body>
-    <div class="register-photo" style="height: 100%;height: 100vh;display: grid;">
-        <div class="form-container">
-            <div class="image-holder"></div>
-            <form id="register_form" method="post" name="form1">
-                <h2 class="text-center"><strong>Create</strong> an account.</h2>
-                <div class="form-group">
-                    <div id="errormsg" class="msgerror" style="display:none;"><label style="margin-bottom: 0px;">Label</label></div>
-                    <div id="successmsg" class="msgsuccess" style="display:none;"><label style="margin-bottom: 0px;">Label</label></div>
-                </div>
-                <div class="form-group"><input class="form-control" type="text" id="name" name="name" placeholder="Name"></div>
-                <div class="form-group"><input class="form-control" type="email" id="email" name="email" placeholder="Email"></div>
-                <div class="form-group"><input class="form-control" type="password" id="password" name="password" placeholder="Password"></div>
-                <div class="form-group"><input class="form-control" type="password" id="repassword" name="repassword" placeholder="Password (repeat)"></div>
-                <div class="form-group">
-                    <div class="form-check"><label class="form-check-label"><input class="form-check-input" type="checkbox">I agree to the license terms.</label></div>
-                </div>
-                <div class="form-group"><button class="btn btn-primary btn-block btn-lg" id="signup" type="button" name="signup">Sign Up</button></div><a class="already" href="login.php">You already have an account? Login here.</a></form>
+    <div class="fullsize">
+        <div class="row d-lg-flex">
+            <div class="col-xl-8 offset-xl-2 d-flex d-sm-flex d-md-flex d-lg-flex d-xl-flex align-items-end justify-content-sm-center align-items-sm-end justify-content-md-center align-items-md-end justify-content-lg-center align-items-lg-end justify-content-xl-center align-items-xl-end"><img class="rounded-circle" src="assets/img/https___s3.amazonaws.com_appforest_uf_f1572480905302x636683182525524100_image.jpg" width="150" height="150" loading="auto"></div>
+        </div>
+        <div class="row" style="height: 0px;">
+            <div class="col-xl-8 offset-xl-2 d-flex d-sm-flex d-md-flex d-lg-flex d-xl-flex justify-content-center justify-content-sm-center justify-content-md-center align-items-md-center justify-content-lg-center align-items-lg-center justify-content-xl-center align-items-xl-start"
+                style="margin-top: 50px;height: 84px;">
+                <p style="font-family: 'Titillium Web', sans-serif;font-size: 40px;">Intern Bedriftschat</p>
+            </div>
+        </div>
+        <div class="row" style="height: 225px;">
+            <div class="col-xl-8 offset-xl-2 d-flex d-sm-flex d-md-flex d-lg-flex d-xl-flex justify-content-center justify-content-sm-center justify-content-md-center align-items-lg-start align-items-xl-start" style="margin-top: 0px;padding: 0px;"><a class="joinbeta" href="#" style="font-size: 20px;font-family: 'Titillium Web', sans-serif;">Bli med i Beta</a></div>
         </div>
     </div>
     <script src="assets/js/jquery.min.js"></script>

@@ -40,7 +40,7 @@ if (isset($_GET['l'])){?>
             <div class="illustration"><i class="far fa-user"></i></div>
             <div class="form-group"><input class="form-control" type="email" id="email" name="email" placeholder="Email"></div>
             <div class="form-group"><input class="form-control" type="password" id="password" name="password" placeholder="Password"></div>
-            <div class="form-group"><button class="btn btn-primary btn-block" id="login" type="submit" name="login">Log In</button></div><a class="forgot" href="registration.php">Don't have an account? Click here!</a></form>
+            <div class="form-group"><button class="btn btn-primary btn-block" id="login" type="button" name="login">Log In</button></div><a class="forgot" href="registration.php">Don't have an account? Click here!</a></form>
     </div>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
@@ -52,6 +52,7 @@ if (isset($_GET['l'])){?>
     <script src="assets/js/login.js"></script>
     <script src="assets/js/Select-Search.js"></script>
     <script src="assets/js/Studious-selectbox.js"></script>
+    <script src="assets/js/update.js"></script>
 </body>
 
 </html>

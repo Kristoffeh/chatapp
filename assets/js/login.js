@@ -76,4 +76,43 @@ $(document).ready(function(){
             alert('Please fill all the fields!');
         }
     });
+    
+    $('#msg').keydown(function (e){
+        if (e.keyCode == 13 || e.which == 13){
+            e.preventDefault();
+            submitChat();
+        }
+    })
+    
+    function submitChat(){
+        var msg = $("#msg").val();
+        var user = $("#user").val();
+
+        if(msg != ""){
+            $.ajax({
+                url: "../../require/save.php",
+                type: "POST",
+                data: {
+                    type: 5,
+                    msg: msg,
+                    user: user
+                },
+                cache: false,
+                success: function(dataResult){
+                    var dataResult = JSON.parse(dataResult);
+                    if(dataResult.statusCode==200){
+                        $('#messageform').find('input:text').val('');
+                        $('#msg').val('');
+                        
+                    }
+                    else if(dataResult.statusCode==201){
+                    }
+                }
+            });
+        }
+        else{
+            alert('Please fill all the fields!');
+        }
+    }
+    
 });
