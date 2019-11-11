@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    
     $('#signup').on('click', function(){
         $("#signup").attr("disabled", "disabled");
         var name = $("#name").val();
@@ -81,6 +82,7 @@ $(document).ready(function(){
         if (e.keyCode == 13 || e.which == 13){
             e.preventDefault();
             submitChat();
+            $('#lblcount').html('0 / 1500');
         }
     })
     
@@ -104,6 +106,9 @@ $(document).ready(function(){
                         $('#messageform').find('input:text').val('');
                         $('#msg').val('');
                         
+                        var object = $("#scrolldiv");
+                        var he = object.get(0).scrollHeight;
+                        object.animate({scrollTop: he});
                     }
                     else if(dataResult.statusCode==201){
                     }

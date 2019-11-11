@@ -40,12 +40,7 @@ $userRow=mysqli_fetch_array($r);
                     <div class="darkbars scrollable" style="border-bottom: 0px solid rgba(0,0,0,0);">
                         <form>
                             <div class="form-group" style="margin-bottom: 0px;">
-                                <p style="font-family: 'Titillium Web', sans-serif;font-size: 27px;color: rgb(96,96,96);margin-top: 22px;margin-left: 23px;margin-bottom: 0px;"><strong>Rom</strong></p><a class="btn btn-secondary btn-block text-left left-menu-btn setfont darkbars" role="button"># kultur</a><a class="btn btn-secondary btn-block text-left left-menu-btn setfont darkbars" role="button"
-                                    style="margin-top: 0px;"># samskap</a><a class="btn btn-secondary btn-block text-left left-menu-btn setfont darkbars" role="button" style="margin-top: 0px;"># støttefunksjonen</a><a class="btn btn-secondary btn-block text-left left-menu-btn setfont darkbars"
-                                    role="button" style="margin-top: 0px;"># rådmannsgruppen</a><a class="btn btn-secondary btn-block text-left left-menu-btn setfont darkbars" role="button" style="margin-top: 0px;"># teknisk</a><a class="btn btn-secondary btn-block text-left left-menu-btn setfont darkbars"
-                                    role="button" style="margin-top: 0px;"># uteseksjon</a><a class="btn btn-secondary btn-block text-left left-menu-btn setfont darkbars" role="button" style="margin-top: 0px;"># uteseksjon</a><a class="btn btn-secondary btn-block text-left left-menu-btn setfont darkbars"
-                                    role="button" style="margin-top: 0px;"># uteseksjon</a><a class="btn btn-secondary btn-block text-left left-menu-btn setfont darkbars" role="button" style="margin-top: 0px;"># uteseksjon</a><a class="btn btn-secondary btn-block text-left left-menu-btn setfont darkbars"
-                                    role="button" style="margin-top: 0px;"># uteseksjon</a></div>
+                                <p style="font-family: 'Titillium Web', sans-serif;font-size: 27px;color: rgb(96,96,96);margin-top: 22px;margin-left: 23px;margin-bottom: 0px;"><strong>Rom</strong></p><a class="btn btn-secondary btn-block text-left left-menu-btn setfont darkbars" role="button"># main</a></div>
                         </form>
                     </div>
                     <div class="d-md-flex d-lg-flex d-xl-flex align-items-md-end align-items-lg-end align-items-xl-end setborder darkbars" style="border-top: 0px solid rgba(0,0,0,0);"><a class="btn btn-secondary btn-block text-left left-menu-btn setfont darkbars" role="button" style="margin-top: 0px;border-top: 1px solid #d6d6d6;color: rgb(33,37,41);" href="admin.php">Administrasjon</a></div>
@@ -57,12 +52,13 @@ $userRow=mysqli_fetch_array($r);
                         <form>
                             <div class="form-group text-right" style="margin-bottom: -31px;"><label style="margin-right: 10px;font-family: 'Titillium Web', sans-serif;font-size: 19px;margin-bottom: 1px;"><?php echo $userRow['name']; ?></label><a class="loggut" href="require/loggut.php?l=success">Logg ut</a></div>
                             <div class="form-group" style="margin-bottom: 0px;">
-                                <h1 style="font-family: 'Titillium Web', sans-serif;margin-bottom: 5px;font-size: 33px;color: rgb(96,96,96);"><strong>Støttefunksjonen</strong><label class="invisible roomlabel" style="margin-bottom: 0px;"># støttefunksjonen</label></h1>
-                                <p style="color: rgb(119,119,119);font-family: 'Titillium Web', sans-serif;font-size: 17px;">Økonomi avdelingen på Rådhuset</p>
+                                <h1 class="d-flex align-items-end mx-auto" style="font-family: 'Titillium Web', sans-serif;margin-bottom: 5px;font-size: 33px;color: rgb(96,96,96);"><strong>Main Chat</strong><label class="invisible roomlabel" style="margin-bottom: 0px;"># støttefunksjonen</label></h1>
+                                <p style="color: rgb(119,119,119);font-family: 'Titillium Web', sans-serif;font-size: 17px;">This is the main chat for this community</p>
                             </div>
                         </form>
                     </div>
                     <div class="d-flex d-xl-flex flex-column flex-fill align-items-xl-start middle-middle-div scrollable interval" id="scrolldiv" style="padding: 20px;padding-left: 30px;padding-top: 20px;margin-bottom: 0px;">
+                        <div id="dbchecker" style="width: 100%;"></div>
                         <div id="interval" style="width: 100%;"></div>
                     </div>
                     <div>
@@ -82,13 +78,30 @@ $userRow=mysqli_fetch_array($r);
                     <div class="scrollable">
                         <form>
                             <div class="form-group" style="margin-bottom: 0px;">
-                                <p style="font-family: 'Titillium Web', sans-serif;font-size: 27px;color: rgb(96,96,96);"><strong>Brukere</strong></p>
-                                <div class="dropdown"><button class="btn dropdown-toggle memberitem" data-toggle="dropdown" aria-expanded="false" type="button">Ole</button>
-                                    <div class="dropdown-menu" role="menu" style="padding: 0px;"><a class="dropdown-item" role="presentation" href="#" style="padding-top: 2px;padding-bottom: 2px;"><span style="text-decoration: line-through;">Visit profile</span></a><a class="dropdown-item" role="presentation" href="#"
-                                            style="padding-top: 0px;padding-bottom: 0px;"><span style="text-decoration: line-through;">Send message</span></a>
-                                        <div class="dropdown-divider" role="presentation"></div><a class="dropdown-item" role="presentation" href="#" style="padding-top: 0px;padding-bottom: 5px;"><span style="text-decoration: line-through;">Kick from room</span></a></div>
-                                </div>
-                            </div>
+                                <p style="font-family: 'Titillium Web', sans-serif;font-size: 27px;color: rgb(96,96,96);"><strong>Brukere</strong></p><?php
+require 'require/dbconnect.php';
+
+$q = "SELECT * FROM users";
+if ($resu = mysqli_query($conn, $q)) {
+
+    while ($ro = mysqli_fetch_assoc($resu)) {?>
+
+    <div class="dropdown"><button class="btn dropdown-toggle memberitem" data-toggle="dropdown" aria-expanded="false" type="button"><?php echo $ro['name']; ?></button>
+        <div role="menu" class="dropdown-menu" style="padding: 0px;"><a role="presentation" class="dropdown-item" href="#" style="padding-top: 2px;padding-bottom: 2px;"><span style="text-decoration: line-through;">Visit profile</span></a><a role="presentation" class="dropdown-item" href="#" style="padding-top: 0px;padding-bottom: 0px;"><span style="text-decoration: line-through;">Send message</span></a>
+            <div
+                role="presentation" class="dropdown-divider"></div><a role="presentation" class="dropdown-item" href="#" style="padding-top: 0px;padding-bottom: 5px;"><span style="text-decoration: line-through;">Kick from room</span></a></div>
+    </div>
+
+    <?php
+    }
+
+    mysqli_free_result($resu);
+}
+mysqli_close($conn);
+?>
+
+
+</div>
                         </form>
                     </div>
                 </div>
